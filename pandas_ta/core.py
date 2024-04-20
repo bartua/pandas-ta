@@ -1107,6 +1107,13 @@ class AnalysisIndicators(BasePandasObject):
         result = stoch(high=high, low=low, close=close, fast_k=fast_k, slow_k=slow_k, slow_d=slow_d, mamode=mamode, offset=offset, **kwargs)
         return self._post_process(result, **kwargs)
 
+    def stott(self, k=None, smooth_k=None,length=None,multiplier=None,mamode=None, offset=None, **kwargs):
+        high = self._get_column(kwargs.pop("high", "high"))
+        low = self._get_column(kwargs.pop("low", "low"))
+        close = self._get_column(kwargs.pop("close", "close"))
+        result = stott(high=high, low=low, close=close, k=k, smooth_k=smooth_k, length=length,multiplier=multiplier,mamode=mamode, offset=offset, **kwargs)
+        return self._post_process(result, **kwargs)
+
     def stochrsi(self, length=None, rsi_length=None, k=None, d=None, mamode=None, offset=None, **kwargs):
         high = self._get_column(kwargs.pop("high", "high"))
         low = self._get_column(kwargs.pop("low", "low"))
@@ -1334,6 +1341,33 @@ class AnalysisIndicators(BasePandasObject):
     def zlma(self, length=None, mamode=None, offset=None, **kwargs):
         close = self._get_column(kwargs.pop("close", "close"))
         result = zlma(close=close, length=length, mamode=mamode, offset=offset, **kwargs)
+        return self._post_process(result, **kwargs)
+
+    def pmax(self, length=None, multiplier=None,mamode=None, offset=None, **kwargs):
+        high = self._get_column(kwargs.pop("high", "high"))
+        low = self._get_column(kwargs.pop("low", "low"))
+        close = self._get_column(kwargs.pop("close", "close"))
+        result = pmax(high=high, low=low, close=close, length=length, multiplier=multiplier,mamode=mamode, offset=offset, **kwargs)
+        return self._post_process(result, **kwargs)
+
+    def ssl(self, length=None,offset=None, **kwargs):
+        high = self._get_column(kwargs.pop("high", "high"))
+        low = self._get_column(kwargs.pop("low", "low"))
+        close = self._get_column(kwargs.pop("close", "close"))
+        result = ssl(high=high, low=low, close=close, length=length,offset=offset, **kwargs)
+        return self._post_process(result, **kwargs)        
+
+    def ott(self, length=None, multiplier=None,mamode=None, offset=None, **kwargs):
+        close = self._get_column(kwargs.pop("close", "close"))
+        result = ott(close=close, length=length, multiplier=multiplier,mamode=mamode, offset=offset, **kwargs)
+        return self._post_process(result, **kwargs)
+    
+    def alphatrend(self, length=None, multiplier=None,volumeCalculation=None, offset=None, **kwargs):
+        high = self._get_column(kwargs.pop("high", "high"))
+        low = self._get_column(kwargs.pop("low", "low"))
+        close = self._get_column(kwargs.pop("close", "close"))
+        volume = self._get_column(kwargs.pop("volume", "volume"))
+        result = alphatrend(high=high, low=low, close=close, volume=volume,length=length, multiplier=multiplier, offset=offset,volumeCalculation = volumeCalculation, **kwargs)
         return self._post_process(result, **kwargs)
 
     # Performance

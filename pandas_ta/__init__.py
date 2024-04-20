@@ -50,14 +50,14 @@ Category = {
         "coppock", "cti", "er", "eri", "fisher", "inertia", "kdj", "kst", "macd",
         "mom", "pgo", "ppo", "psl", "pvo", "qqe", "roc", "rsi", "rsx", "rvgi",
         "slope", "smi", "squeeze", "squeeze_pro", "stc", "stoch", "stochrsi", "td_seq", "trix",
-        "tsi", "uo", "willr"
+        "tsi", "uo", "willr","stott"
     ],
     # Overlap
     "overlap": [
         "alma", "dema", "ema", "fwma", "hilo", "hl2", "hlc3", "hma", "ichimoku",
         "jma", "kama", "linreg", "mcgd", "midpoint", "midprice", "ohlc4",
         "pwma", "rma", "sinwma", "sma", "ssf", "supertrend", "swma", "t3",
-        "tema", "trima", "vidya", "vwap", "vwma", "wcp", "wma", "zlma"
+        "tema", "trima", "vidya", "vwap", "vwma", "wcp", "wma", "zlma","ott","pmax","ssl","alphatrend"
     ],
     # Performance
     "performance": ["log_return", "percent_return"],
