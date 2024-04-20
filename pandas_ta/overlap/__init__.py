@@ -33,3 +33,7 @@ from .vwma import vwma
 from .wcp import wcp
 from .wma import wma
 from .zlma import zlma
+from .alphatrend import alphatrend
+from .ott import ott
+from .pmax import pmax  
+from .ssl import ssl
